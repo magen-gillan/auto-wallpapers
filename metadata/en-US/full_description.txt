@@ -1,0 +1,17 @@
+Auto wallpapers is a dynamic and versatile app that refreshes your device’s look with wallpapers chosen from your own albums. It gives you a simple way to personalize your home screen and lock screen.
+
+Dynamic Wallpaper Changer: Set wallpaper changes at a chosen time interval so your device stays fresh without manual work.
+
+Home and Lock Screen Customization: Use one album for both screens or configure the home screen and lock screen independently.
+
+Change on Lock and Unlock: Optionally change the home and lock-screen wallpapers whenever the phone is locked or unlocked.
+
+Image Effects: Darken, blur, vignette, or apply grayscale effects to wallpapers so they match your visual preferences.
+
+Folder Support: Organize wallpapers into folders and keep albums ready for automatic updates.
+
+On-Device Storage: Wallpapers and settings remain on your device for quick access and reduced data usage.
+
+Auto wallpapers is designed to keep wallpaper changes running after the app is closed, subject to Android and device battery-management policies.
+
+Privacy policy: https://anthonyy232.github.io/Paperize/
