@@ -32,7 +32,30 @@ fun Uri.isValid(contentResolver: ContentResolver): Boolean {
 }
 
 fun Uri.getFileName(context: Context): String? {
-    return DocumentFile.fromSingleUri(context, this)?.name
+    // OpenDocumentTree returns a tree URI. fromSingleUri(treeUri) is not reliable and
+    // commonly returns null, which previously caused callers to use the generic
+    // "Wallpapers" fallback. Resolve the tree document first, then use the document id
+    // as a provider-independent fallback for OEM document providers.
+    val treeName = runCatching { DocumentFile.fromTreeUri(context, this)?.name }
+        .getOrNull()
+        ?.trim()
+        ?.takeUnless { it.isNullOrBlank() }
+    if (treeName != null) return treeName
+
+    val documentName = runCatching {
+        val documentId = DocumentsContract.getTreeDocumentId(this)
+        val documentUri = DocumentsContract.buildDocumentUriUsingTree(this, documentId)
+        DocumentFile.fromSingleUri(context, documentUri)?.name
+    }.getOrNull()
+        ?.trim()
+        ?.takeUnless { it.isNullOrBlank() }
+    if (documentName != null) return documentName
+
+    return runCatching {
+        val documentId = DocumentsContract.getTreeDocumentId(this)
+        val decodedPath = Uri.decode(documentId.substringAfter(':', documentId))
+        decodedPath.substringAfterLast('/').trim().takeUnless { it.isBlank() }
+    }.getOrNull()
 }
 
 /**

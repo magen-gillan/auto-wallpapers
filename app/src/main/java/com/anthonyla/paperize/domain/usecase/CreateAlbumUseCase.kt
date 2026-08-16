@@ -11,14 +11,20 @@ import javax.inject.Inject
 class CreateAlbumUseCase @Inject constructor(
     private val albumRepository: AlbumRepository
 ) {
-    suspend operator fun invoke(name: String, coverUri: String? = null): Result<Album> {
+    suspend operator fun invoke(
+        name: String,
+        coverUri: String? = null,
+        allowDuplicateName: Boolean = false
+    ): Result<Album> {
         if (name.isBlank()) {
             return Result.Error(IllegalArgumentException("Album name cannot be empty"))
         }
 
-        val existingAlbum = albumRepository.getAlbumByName(name)
-        if (existingAlbum != null) {
-            return Result.Error(IllegalArgumentException("Album with this name already exists"))
+        if (!allowDuplicateName) {
+            val existingAlbum = albumRepository.getAlbumByName(name)
+            if (existingAlbum != null) {
+                return Result.Error(IllegalArgumentException("Album with this name already exists"))
+            }
         }
 
         return albumRepository.createAlbum(name, coverUri)

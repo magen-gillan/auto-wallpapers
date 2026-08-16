@@ -63,8 +63,14 @@ fun HomeScreen(
         contract = ActivityResultContracts.OpenDocumentTree()
     ) { uri: Uri? ->
         uri?.let {
-            val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-            runCatching { context.contentResolver.takePersistableUriPermission(it, takeFlags) }
+            // The app only reads images. Persist READ permission explicitly; asking for WRITE
+            // can fail on providers that expose read-only tree grants and was previously ignored.
+            runCatching {
+                context.contentResolver.takePersistableUriPermission(
+                    it,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+                )
+            }
             viewModel.importFolderAsAlbum(it.toString())
         }
     }

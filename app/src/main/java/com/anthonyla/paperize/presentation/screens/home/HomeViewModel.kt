@@ -161,9 +161,8 @@ class HomeViewModel @Inject constructor(
             val folderUri = uriString.toUri()
             val baseName = folderUri.getFileName(context)?.trim().takeUnless { it.isNullOrBlank() } ?: "Wallpapers"
             // Preserve the folder name exactly as provided by the system picker.
-            // If the same album name already exists, report the repository error instead of
-            // silently changing the user's folder name with a numeric suffix.
-            when (val created = createAlbumUseCase(baseName)) {
+            // Folder imports may share a name; each imported folder still gets its own album id.
+            when (val created = createAlbumUseCase(baseName, allowDuplicateName = true)) {
                 is com.anthonyla.paperize.core.Result.Success -> {
                     val albumId = created.data.id
                     val folderId = generateId()
