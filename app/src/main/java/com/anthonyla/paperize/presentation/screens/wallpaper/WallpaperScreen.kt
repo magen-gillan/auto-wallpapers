@@ -368,69 +368,6 @@ fun WallpaperScreen(
             scheduleSettings.liveAlbumId != null
         }
 
-        // Current Wallpaper remains visible on the main screen.
-        if (wallpaperMode == WallpaperMode.STATIC) {
-            CurrentWallpaperPreview(
-                homeWallpaperUri = homeWallpaperUri,
-                lockWallpaperUri = lockWallpaperUri,
-                animate = appSettings.animate
-            )
-            HorizontalDivider(modifier = Modifier.padding(vertical = AppSpacing.small))
-        }
-
-        // Requested unlock behavior remains visible on the main screen.
-        if (wallpaperMode == WallpaperMode.STATIC && allRequiredAlbumsSelected) {
-            SettingSwitchItem(
-                title = stringResource(R.string.change_on_lock_unlock),
-                description = stringResource(R.string.change_wallpaper_on_lock_unlock),
-                checked = scheduleSettings.changeOnLockUnlock,
-                onCheckedChange = { enabled ->
-                    updateSettingsImmediate(scheduleSettings.copy(changeOnLockUnlock = enabled))
-                }
-            )
-        }
-
-
-
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = AppSpacing.small, vertical = AppSpacing.extraSmall),
-            onClick = { showAdvanced = !showAdvanced },
-            shape = MaterialTheme.shapes.medium,
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceContainerLow
-            )
-        ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(AppSpacing.large),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        text = stringResource(R.string.advanced),
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                    Text(
-                        text = stringResource(R.string.advanced_settings_description),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-                Icon(
-                    imageVector = if (showAdvanced) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
-                    contentDescription = null
-                )
-            }
-        }
-
-        if (showAdvanced) {
-            // Home and Lock Screen Toggles - Enhanced with better styling
-        // Only show in Static Mode
         if (wallpaperMode == WallpaperMode.STATIC) {
             Row(
                 modifier = Modifier
@@ -537,6 +474,68 @@ fun WallpaperScreen(
                 }
             }
         }
+
+        // Current Wallpaper remains visible on the main screen.
+        if (wallpaperMode == WallpaperMode.STATIC) {
+            CurrentWallpaperPreview(
+                homeWallpaperUri = homeWallpaperUri,
+                lockWallpaperUri = lockWallpaperUri,
+                animate = appSettings.animate
+            )
+            HorizontalDivider(modifier = Modifier.padding(vertical = AppSpacing.small))
+        }
+
+        // Requested unlock behavior remains visible on the main screen.
+        if (wallpaperMode == WallpaperMode.STATIC && allRequiredAlbumsSelected) {
+            SettingSwitchItem(
+                title = stringResource(R.string.change_on_lock_unlock),
+                description = stringResource(R.string.change_wallpaper_on_lock_unlock),
+                checked = scheduleSettings.changeOnLockUnlock,
+                onCheckedChange = { enabled ->
+                    updateSettingsImmediate(scheduleSettings.copy(changeOnLockUnlock = enabled))
+                }
+            )
+        }
+
+
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = AppSpacing.small, vertical = AppSpacing.extraSmall),
+            onClick = { showAdvanced = !showAdvanced },
+            shape = MaterialTheme.shapes.medium,
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceContainerLow
+            )
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(AppSpacing.large),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = stringResource(R.string.advanced),
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                    Text(
+                        text = stringResource(R.string.advanced_settings_description),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+                Icon(
+                    imageVector = if (showAdvanced) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
+                    contentDescription = null
+                )
+            }
+        }
+
+        if (showAdvanced) {
 
 
         // Individual scheduling (only show if both screens enabled and changer is enabled)

@@ -1,5 +1,6 @@
 package com.anthonyla.paperize.presentation.screens.settings
 
+import android.app.Activity
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -7,6 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.Wallpaper
 import androidx.compose.material.icons.filled.BatteryAlert
@@ -30,6 +32,8 @@ import com.anthonyla.paperize.presentation.common.components.SettingSwitchItem
 import com.anthonyla.paperize.presentation.theme.AppSpacing
 import com.anthonyla.paperize.core.util.BatteryOptimizationUtil.isIgnoringBatteryOptimizations
 import com.anthonyla.paperize.core.util.BatteryOptimizationUtil.requestIgnoreBatteryOptimizations
+import com.anthonyla.paperize.core.util.AppLocaleManager
+import com.anthonyla.paperize.domain.model.AppSettings
 
 /**
  * Settings screen with Material 3 Expressive design
@@ -46,8 +50,21 @@ fun SettingsScreen(
     val wallpaperMode by viewModel.wallpaperMode.collectAsStateWithLifecycle()
     var showResetDialog by remember { mutableStateOf(false) }
     var showModeChangeDialog by remember { mutableStateOf(false) }
+    var showLanguageDialog by remember { mutableStateOf(false) }
     var pendingMode by remember { mutableStateOf<com.anthonyla.paperize.core.WallpaperMode?>(null) }
     val context = LocalContext.current
+    val selectedLanguageCode = appSettings?.languageCode ?: AppSettings.LANGUAGE_SYSTEM
+    val selectedLanguageLabel = when (selectedLanguageCode) {
+        AppSettings.LANGUAGE_ARABIC -> stringResource(R.string.language_arabic)
+        AppSettings.LANGUAGE_ENGLISH -> stringResource(R.string.language_english)
+        else -> stringResource(R.string.language_system)
+    }
+    val selectLanguage: (String) -> Unit = { languageCode ->
+        viewModel.updateLanguageCode(languageCode)
+        AppLocaleManager.apply(context, languageCode)
+        showLanguageDialog = false
+        (context as? Activity)?.recreate()
+    }
 
     var isIgnoringBatteryOptimizations by remember {
         mutableStateOf(isIgnoringBatteryOptimizations(context))
@@ -190,6 +207,49 @@ fun SettingsScreen(
                 checked = appSettings?.animate ?: true,
                 onCheckedChange = { viewModel.updateAnimate(it) }
             )
+
+            Spacer(modifier = Modifier.height(AppSpacing.extraLarge))
+
+            // Language Section
+            SectionHeader(
+                icon = Icons.Filled.Language,
+                title = stringResource(R.string.language)
+            )
+
+            Spacer(modifier = Modifier.height(AppSpacing.medium))
+
+            Card(
+                onClick = { showLanguageDialog = true },
+                modifier = Modifier.fillMaxWidth(),
+                shape = MaterialTheme.shapes.medium,
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceContainerLow
+                )
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(AppSpacing.large),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = stringResource(R.string.language),
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Text(
+                            text = selectedLanguageLabel,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                    TextButton(onClick = { showLanguageDialog = true }) {
+                        Text(stringResource(R.string.change))
+                    }
+                }
+            }
 
             Spacer(modifier = Modifier.height(AppSpacing.extraLarge))
 
@@ -347,6 +407,42 @@ fun SettingsScreen(
                 },
                 dismissButton = {
                     TextButton(onClick = { showResetDialog = false }) {
+                        Text(stringResource(R.string.cancel))
+                    }
+                }
+            )
+        }
+
+        if (showLanguageDialog) {
+            AlertDialog(
+                onDismissRequest = { showLanguageDialog = false },
+                title = { Text(stringResource(R.string.choose_language)) },
+                text = {
+                    Column(modifier = Modifier.fillMaxWidth()) {
+                        listOf(
+                            AppSettings.LANGUAGE_SYSTEM to stringResource(R.string.language_system),
+                            AppSettings.LANGUAGE_ENGLISH to stringResource(R.string.language_english),
+                            AppSettings.LANGUAGE_ARABIC to stringResource(R.string.language_arabic)
+                        ).forEach { (code, label) ->
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = AppSpacing.extraSmall),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                RadioButton(
+                                    selected = selectedLanguageCode == code,
+                                    onClick = { selectLanguage(code) }
+                                )
+                                TextButton(onClick = { selectLanguage(code) }) {
+                                    Text(label)
+                                }
+                            }
+                        }
+                    }
+                },
+                confirmButton = {
+                    TextButton(onClick = { showLanguageDialog = false }) {
                         Text(stringResource(R.string.cancel))
                     }
                 }

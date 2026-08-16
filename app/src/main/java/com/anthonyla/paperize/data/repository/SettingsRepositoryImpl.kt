@@ -76,6 +76,9 @@ class SettingsRepositoryImpl @Inject constructor(
     override suspend fun updateFirstLaunch(isFirstLaunch: Boolean) =
         preferencesManager.updateFirstLaunch(isFirstLaunch)
 
+    override suspend fun updateLanguageCode(languageCode: String) =
+        preferencesManager.updateLanguageCode(languageCode)
+
     // ============ Atomic ScheduleSettings Operations ============
 
     override suspend fun updateEnableChanger(enabled: Boolean) =

@@ -1,5 +1,6 @@
 package com.anthonyla.paperize.presentation
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.anthonyla.paperize.domain.model.AppSettings
+import com.anthonyla.paperize.core.util.AppLocaleManager
 import com.anthonyla.paperize.presentation.common.navigation.HomeRoute
 import com.anthonyla.paperize.presentation.common.navigation.NavigationGraph
 import com.anthonyla.paperize.presentation.common.navigation.StartupRoute
@@ -30,6 +32,10 @@ import dagger.hilt.android.AndroidEntryPoint
  */
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(AppLocaleManager.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()

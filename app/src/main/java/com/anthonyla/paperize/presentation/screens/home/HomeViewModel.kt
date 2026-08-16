@@ -160,8 +160,10 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val folderUri = uriString.toUri()
             val baseName = folderUri.getFileName(context)?.trim().takeUnless { it.isNullOrBlank() } ?: "Wallpapers"
-            val albumName = buildUniqueAlbumName(baseName)
-            when (val created = createAlbumUseCase(albumName)) {
+            // Preserve the folder name exactly as provided by the system picker.
+            // If the same album name already exists, report the repository error instead of
+            // silently changing the user's folder name with a numeric suffix.
+            when (val created = createAlbumUseCase(baseName)) {
                 is com.anthonyla.paperize.core.Result.Success -> {
                     val albumId = created.data.id
                     val folderId = generateId()
@@ -204,12 +206,6 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private suspend fun buildUniqueAlbumName(baseName: String): String {
-        if (albumRepository.getAlbumByName(baseName) == null) return baseName
-        var suffix = 2
-        while (albumRepository.getAlbumByName("$baseName ($suffix)") != null) suffix++
-        return "$baseName ($suffix)"
-    }
 
     fun createAlbum(name: String) {
         viewModelScope.launch {

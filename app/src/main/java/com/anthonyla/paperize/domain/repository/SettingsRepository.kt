@@ -102,6 +102,7 @@ interface SettingsRepository {
     suspend fun updateDynamicTheming(enabled: Boolean)
     suspend fun updateAnimate(enabled: Boolean)
     suspend fun updateFirstLaunch(isFirstLaunch: Boolean)
+    suspend fun updateLanguageCode(languageCode: String)
 
     // ============ Atomic ScheduleSettings Operations ============
 

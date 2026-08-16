@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">خلفيات تلقائية</string>
+    <string name="import_adding_folder">جارٍ إضافة المجلد…</string>
+    <string name="import_adding_wallpapers">جارٍ إضافة الخلفيات…</string>
+    <string name="import_scanning">جارٍ الفحص… تم العثور على %1$d</string>
+    <string name="import_saving">جارٍ الحفظ %1$d / %2$d</string>
+    <string name="home">الرئيسية</string>
+    <string name="settings_screen">الإعدادات</string>
+    <string name="wallpaper">الخلفية</string>
+    <string name="library">المكتبة</string>
+    <string name="back">رجوع</string>
+    <string name="add_folder">إضافة مجلد</string>
+    <string name="add_album">إضافة ألبوم</string>
+    <string name="cancel">إلغاء</string>
+    <string name="save">حفظ</string>
+    <string name="delete_album">حذف</string>
+    <string name="change_name">تعديل الاسم</string>
+    <string name="no_album_selected">لم يتم اختيار ألبوم</string>
+    <string name="currently_selected_album">الألبوم المحدد حاليًا</string>
+    <string name="agree">موافقة</string>
+    <string name="welcome">مرحبًا</string>
+    <string name="continue_button">متابعة</string>
+    <string name="allow">السماح</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="reset_to_default">إعادة إلى الإعدادات الافتراضية</string>
+    <string name="reset_all_data">إعادة ضبط جميع البيانات</string>
+    <string name="confirm">تأكيد</string>
+    <string name="animation">الحركة</string>
+    <string name="increase_visual_appeal">تحسين المظهر البصري</string>
+    <string name="dark_mode">الوضع الداكن</string>
+    <string name="easier_on_the_eyes">أسهل على العينين</string>
+    <string name="material_you">Material You</string>
+    <string name="dynamic_theming">ألوان ديناميكية</string>
+    <string name="appearance">المظهر</string>
+    <string name="about">حول التطبيق</string>
+    <string name="no_albums_found">لا توجد ألبومات</string>
+    <string name="empty_album">ألبوم فارغ</string>
+    <string name="ok">حسنًا</string>
+    <string name="fill">ملء</string>
+    <string name="fit">ملاءمة</string>
+    <string name="stretch">تمديد</string>
+    <string name="home_screen_btn">الشاشة الرئيسية</string>
+    <string name="lock_screen_btn">شاشة القفل</string>
+    <string name="individual_scheduling">جدولة منفصلة</string>
+    <string name="show_interval_sliders">إظهار أشرطة الفواصل الزمنية</string>
+    <string name="interval_text">الفاصل الزمني</string>
+    <string name="lock">القفل</string>
+    <string name="folders">المجلدات</string>
+    <string name="wallpapers_sort">الخلفيات</string>
+    <string name="close">إغلاق</string>
+    <string name="shuffle">عشوائي</string>
+    <string name="days_txt">أيام</string>
+    <string name="hours_txt">ساعات</string>
+    <string name="change_on_screen_off">التغيير عند إيقاف الشاشة</string>
+    <string name="parallax_effect">تأثير المنظور</string>
+    <string name="adaptive_brightness">سطوع متكيف</string>
+    <string name="randomly_shuffle_the_wallpapers">ترتيب الخلفيات عشوائيًا</string>
+    <string name="changing_wallpaper">جارٍ تغيير الخلفية…</string>
+    <string name="add_wallpapers">إضافة خلفيات</string>
+    <string name="select_album">اختيار ألبوم</string>
+    <string name="sort">ترتيب</string>
+    <string name="skip">تخطي</string>
+    <string name="permission_granted">تم منح الإذن</string>
+    <string name="enabled">مفعّل</string>
+    <string name="disabled">معطّل</string>
+    <string name="wallpaper_changer">تغيير الخلفيات</string>
+    <string name="wallpaper_changer_description">إيقاف التغييرات المجدولة مؤقتًا أو استئنافها دون حذف ألبوماتك.</string>
+    <string name="change_on_lock_unlock">التغيير عند فتح القفل</string>
+    <string name="change_wallpaper_on_lock_unlock">تغيير خلفية الشاشة الرئيسية والقفل فور فتح الهاتف.</string>
+    <string name="advanced">متقدم</string>
+    <string name="advanced_settings_description">الجدولة والمظهر والمؤثرات والخيارات الأخرى</string>
+    <string name="horizontal_wallpaper_scrolling">التمرير الأفقي</string>
+    <string name="lock_album_label">ألبوم القفل</string>
+    <string name="home_album_label">ألبوم الرئيسية</string>
+    <string name="scaling">التحجيم</string>
+    <string name="wallpaper_effects_title">مؤثرات الخلفية</string>
+    <string name="visual_effects">المؤثرات البصرية</string>
+    <string name="interactive_effects">المؤثرات التفاعلية</string>
+    <string name="current_wallpapers">الخلفيات الحالية</string>
+    <string name="mins">دقائق</string>
+    <string name="total_interval">الإجمالي: </string>
+    <string name="time_unit_min">د</string>
+    <string name="no_wallpapers_in_album">لا توجد خلفيات في الألبوم</string>
+    <string name="wallpaper_changer_disabled_empty_album">تم تعطيل تغيير الخلفيات لأن الألبوم فارغ.</string>
+    <string name="reliability">الموثوقية</string>
+    <string name="battery_optimization">تحسين البطارية</string>
+    <string name="battery_optimization_description">أوقف تحسين البطارية لضمان تغيير الخلفيات في الخلفية.</string>
+    <string name="check_status">التحقق من الحالة</string>
+    <string name="ignoring">غير خاضع للتحسين (موصى به)</string>
+    <string name="optimizing">خاضع للتحسين (قد يؤخر التغيير)</string>
+    <string name="change_wallpaper_now">تغيير الخلفية الآن</string>
+    <string name="language">اللغة</string>
+    <string name="choose_language">اختيار اللغة</string>
+    <string name="change">تغيير</string>
+    <string name="language_system">لغة النظام</string>
+    <string name="language_english">الإنجليزية</string>
+    <string name="language_arabic">العربية</string>
+    <string name="wallpaper_mode_setting">وضع الخلفية</string>
+    <string name="current_mode">الوضع الحالي</string>
+    <string name="mode_static">ثابت</string>
+    <string name="mode_live_wallpaper">خلفية حية</string>
+    <string name="switch_button">تبديل</string>
+    <string name="enter_the_name_of_the_album" translatable="false">Enter the name of the album</string>
+    <string name="album_name" translatable="false">Album Name</string>
+    <string name="are_you_sure_you_want_to_reset_all_settings_and_data_to_default" translatable="false">Are you sure you want to reset all settings and data to default?</string>
+    <string name="selected_count" translatable="false">%1$s selected</string>
+    <string name="please_read_and_agree_to_the_following_privacy_notice_to_use_the_app" translatable="false">Please read and agree to the following privacy notice to use the app.</string>
+    <string name="privacy_notice" translatable="false">Privacy Notice</string>
+    <string name="are_you_sure_you_want_to_delete_this" translatable="false">Are you sure you want to delete this?</string>
+    <string name="delete_album_question" translatable="false">Delete album?</string>
+    <string name="click_here_to_view_our_privacy_policy" translatable="false">Click here to view our privacy policy</string>
+    <plurals name="wallpaper_count" comment="wallpaper_count [one] [other]" translatable="false">
+        <item quantity="zero">لا توجد خلفيات</item>
+        <item quantity="one">خلفية واحدة</item>
+        <item quantity="two">خلفيتان</item>
+        <item quantity="few">%d خلفيات</item>
+        <item quantity="many">%d خلفية</item>
+        <item quantity="other">%d خلفية</item>
+    </plurals>
+    <string name="privacy_intro_title" translatable="false">Introduction</string>
+    <string name="privacy_intro_content" translatable="false">Welcome to %1$s! This privacy notice outlines how we collect, use, and protect your personal information when you use our mobile application. By using %1$s, you agree to the terms described in this notice.</string>
+    <string name="privacy_data_collection_title" translatable="false">Data Collection</string>
+    <string name="privacy_data_collection_content" translatable="false">Notification Access: %1$s requests notification access to provide you with personalized wallpaper recommendations based on your notifications. We do not store any notification content or personally identifiable information (PII) outside of your device.\n\nLocal Files: %1$s accesses files stored on your device to allow you to set them as wallpapers. We do not upload or transfer these files to any external servers.</string>
+    <string name="privacy_information_usage_title" translatable="false">Information Usage</string>
+    <string name="privacy_information_usage_content" translatable="false">Personal Data: We do not collect or store any personal data such as names, email addresses, or phone numbers.\n\nUsage Analytics: %1$s does not track your usage behavior or collect analytics data.</string>
+    <string name="privacy_data_security_title" translatable="false">Data Security</string>
+    <string name="privacy_data_security_content" translatable="false">On-Device Storage: All data used by %1$s remains on your device. We do not transmit or store any data externally.</string>
+    <string name="empty_album_message" translatable="false">This album has no wallpapers. Please add wallpapers to the album before selecting it.</string>
+    <string name="change_brightness" translatable="false">Brightness Effect</string>
+    <string name="change_blur" translatable="false">Blur Effect</string>
+    <string name="change_vignette" translatable="false">Vignette Effect</string>
+    <string name="none" translatable="false">None</string>
+    <string name="gray_filter" translatable="false">Gray Filter</string>
+    <string name="change_the_image_brightness" translatable="false">Change the image brightness</string>
+    <string name="add_blur_to_the_image" translatable="false">Add blur to the image</string>
+    <string name="darken_the_edges_of_the_image" translatable="false">Darken the edges of the image</string>
+    <string name="make_the_colors_grayscale" translatable="false">Make the colors grayscale</string>
+    <string name="double_tap_to_change" translatable="false">Double-Tap to Change</string>
+    <string name="double_tap_wallpaper_to_change_it" translatable="false">Double-tap wallpaper to change it</string>
+    <string name="change_wallpaper_when_screen_turns_off" translatable="false">Change wallpaper when screen turns off</string>
+    <string name="wallpaper_moves_with_screen_scroll" translatable="false">Swipe between home-screen pages to move the wallpaper (launcher support required)</string>
+    <string name="live_wallpaper_name" translatable="false">Auto wallpapers Live Wallpaper</string>
+    <string name="live_wallpaper_description" translatable="false">Dynamic wallpapers with effects and interactive features</string>
+    <string name="adjust_brightness_based_on_mode" translatable="false">Adjust brightness based on dark/light mode</string>
+    <string name="notification_permission_title" translatable="false">Enable Notifications</string>
+    <string name="notification_permission_description" translatable="false">Allow Auto wallpapers to send notifications about wallpaper changes and when the app is running in the background. You can change this anytime in settings.</string>
+    <string name="content_desc_clear_selection" translatable="false">Clear selection</string>
+    <string name="content_desc_select_all" translatable="false">Select all</string>
+    <string name="content_desc_delete_selected" translatable="false">Delete selected</string>
+    <string name="content_desc_expand" translatable="false">Expand</string>
+    <string name="content_desc_collapse" translatable="false">Collapse</string>
+    <string name="content_desc_sort_items" translatable="false">Sort items</string>
+    <string name="content_desc_save" translatable="false">Save</string>
+    <string name="content_desc_current_lock_wallpaper" translatable="false">Current lock screen wallpaper</string>
+    <string name="content_desc_current_home_wallpaper" translatable="false">Current home screen wallpaper</string>
+    <string name="content_desc_selected" translatable="false">Selected</string>
+    <string name="content_desc_not_selected" translatable="false">Not selected</string>
+    <string name="horizontal_wallpaper_scrolling_description" translatable="false">Allow wide Fill wallpapers to move between home-screen pages. Lock-screen wallpapers remain centered.</string>
+    <string name="sort_name_asc" translatable="false">Name (A-Z)</string>
+    <string name="sort_name_desc" translatable="false">Name (Z-A)</string>
+    <string name="sort_date_added_asc" translatable="false">Date Added (Oldest First)</string>
+    <string name="sort_date_added_desc" translatable="false">Date Added (Newest First)</string>
+    <string name="sort_date_modified_asc" translatable="false">Date Modified (Oldest First)</string>
+    <string name="sort_date_modified_desc" translatable="false">Date Modified (Newest First)</string>
+    <string name="sort_a_z" translatable="false">Sort A-Z</string>
+    <string name="sort_z_a" translatable="false">Sort Z-A</string>
+    <string name="sort_by_newest" translatable="false">Sort by newest</string>
+    <string name="sort_by_oldest" translatable="false">Sort by oldest</string>
+    <string name="notification_channel_description" translatable="false">Wallpaper change notifications</string>
+    <string name="error_failed_to_build_queue" translatable="false">Failed to build wallpaper queue</string>
+    <string name="error_no_valid_wallpaper_after_retries" translatable="false">Could not find a valid wallpaper after retries</string>
+    <string name="parallax_may_not_work" translatable="false">Parallax effect may not work with your OEM or launcher.</string>
+    <plurals name="time_unit_hours" translatable="false">
+        <item quantity="zero">ساعات</item>
+        <item quantity="one">ساعة</item>
+        <item quantity="two">ساعتان</item>
+        <item quantity="few">ساعات</item>
+        <item quantity="many">ساعة</item>
+        <item quantity="other">ساعة</item>
+    </plurals>
+    <plurals name="time_unit_days" translatable="false">
+        <item quantity="zero">أيام</item>
+        <item quantity="one">يوم</item>
+        <item quantity="two">يومان</item>
+        <item quantity="few">أيام</item>
+        <item quantity="many">يومًا</item>
+        <item quantity="other">يوم</item>
+    </plurals>
+    <string name="create_first_album_hint" translatable="false">Tap + to create your first album</string>
+    <string name="album_suffix" translatable="false"> Album</string>
+    <string name="choose_wallpaper_mode" translatable="false">Choose Wallpaper Mode</string>
+    <string name="change_later_in_settings" translatable="false">You can change this later in settings</string>
+    <string name="static_mode" translatable="false">Static Mode</string>
+    <string name="static_mode_description" translatable="false">Classic wallpaper changing using the system wallpaper manager. Simple and battery-efficient. Supports images only.</string>
+    <string name="live_wallpaper_mode" translatable="false">Live Wallpaper Mode</string>
+    <string name="live_wallpaper_mode_description" translatable="false">Advanced live wallpaper with hardware-accelerated effects and interactive features (double-tap, parallax).</string>
+    <string name="select_live_wallpaper" translatable="false">Select Live Wallpaper</string>
+    <string name="select_live_wallpaper_instruction" translatable="false">To use Auto wallpapers in Live Wallpaper mode, you need to select it as your live wallpaper from the system settings.</string>
+    <string name="open_wallpaper_picker" translatable="false">Open Wallpaper Picker</string>
+    <string name="later" translatable="false">Later</string>
+    <string name="mode_switch_warning" translatable="false">Switching modes will reset all albums, wallpapers, and settings. This cannot be undone.</string>
+    <string name="switch_mode_dialog_title" translatable="false">Switch to %1$s Mode?</string>
+    <string name="switch_mode_dialog_description" translatable="false">This will reset all albums, wallpapers, and scheduling settings. This action cannot be undone.\n\nYou\'ll need to re-add your albums and configure your wallpaper settings.</string>
+    <string name="switch_mode_button" translatable="false">Switch Mode</string>
+    <string name="open_wallpaper_picker_instruction_newline" translatable="false">\nTap \'Open Wallpaper Picker\' below to select Auto wallpapers from the list of available live wallpapers.</string>
+    <string name="loading_placeholder" translatable="false">…</string>
+    <string name="album_name_exists_error" translatable="false">Album with this name already exists</string>
+    <string name="change_next_wallpaper_shortcut" translatable="false">Change to the next configured wallpaper</string>
+</resources>

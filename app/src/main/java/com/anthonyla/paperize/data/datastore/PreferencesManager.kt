@@ -48,7 +48,9 @@ class PreferencesManager @Inject constructor(
             darkMode = prefs[booleanPreferencesKey(PreferenceKeys.DARK_MODE)],
             dynamicTheming = prefs[booleanPreferencesKey(PreferenceKeys.DYNAMIC_THEMING)] ?: false,
             animate = prefs[booleanPreferencesKey(PreferenceKeys.ANIMATE)] ?: true,
-            firstLaunch = prefs[booleanPreferencesKey(PreferenceKeys.FIRST_LAUNCH)] ?: true
+            firstLaunch = prefs[booleanPreferencesKey(PreferenceKeys.FIRST_LAUNCH)] ?: true,
+            languageCode = prefs[stringPreferencesKey(PreferenceKeys.LANGUAGE_CODE)]
+                ?: AppSettings.LANGUAGE_SYSTEM
         )
     }
 
@@ -57,7 +59,9 @@ class PreferencesManager @Inject constructor(
             darkMode = prefs[booleanPreferencesKey(PreferenceKeys.DARK_MODE)],
             dynamicTheming = prefs[booleanPreferencesKey(PreferenceKeys.DYNAMIC_THEMING)] ?: false,
             animate = prefs[booleanPreferencesKey(PreferenceKeys.ANIMATE)] ?: true,
-            firstLaunch = prefs[booleanPreferencesKey(PreferenceKeys.FIRST_LAUNCH)] ?: true
+            firstLaunch = prefs[booleanPreferencesKey(PreferenceKeys.FIRST_LAUNCH)] ?: true,
+            languageCode = prefs[stringPreferencesKey(PreferenceKeys.LANGUAGE_CODE)]
+                ?: AppSettings.LANGUAGE_SYSTEM
         )
     }
 
@@ -71,6 +75,7 @@ class PreferencesManager @Inject constructor(
             prefs[booleanPreferencesKey(PreferenceKeys.DYNAMIC_THEMING)] = settings.dynamicTheming
             prefs[booleanPreferencesKey(PreferenceKeys.ANIMATE)] = settings.animate
             prefs[booleanPreferencesKey(PreferenceKeys.FIRST_LAUNCH)] = settings.firstLaunch
+            prefs[stringPreferencesKey(PreferenceKeys.LANGUAGE_CODE)] = settings.languageCode
         }
     }
 
@@ -427,6 +432,12 @@ class PreferencesManager @Inject constructor(
     suspend fun updateFirstLaunch(isFirstLaunch: Boolean) {
         dataStore.edit { prefs ->
             prefs[booleanPreferencesKey(PreferenceKeys.FIRST_LAUNCH)] = isFirstLaunch
+        }
+    }
+
+    suspend fun updateLanguageCode(languageCode: String) {
+        dataStore.edit { prefs ->
+            prefs[stringPreferencesKey(PreferenceKeys.LANGUAGE_CODE)] = languageCode
         }
     }
 

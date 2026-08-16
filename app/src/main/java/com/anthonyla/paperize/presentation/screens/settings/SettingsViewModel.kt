@@ -66,6 +66,12 @@ class SettingsViewModel @Inject constructor(
         }
     }
 
+    fun updateLanguageCode(languageCode: String) {
+        viewModelScope.launch {
+            settingsRepository.updateLanguageCode(languageCode)
+        }
+    }
+
     fun updateFirstLaunch(isFirstLaunch: Boolean) {
         viewModelScope.launch {
             // Use atomic update to prevent race conditions

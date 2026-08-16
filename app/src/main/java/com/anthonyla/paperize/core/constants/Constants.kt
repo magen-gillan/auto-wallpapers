@@ -207,8 +207,9 @@ object PreferenceKeys {
     // Behavior
     const val ADAPTIVE_BRIGHTNESS = "adaptive_brightness"
 
-    // First launch
+    // First launch and language
     const val FIRST_LAUNCH = "first_launch"
+    const val LANGUAGE_CODE = "language_code"
 
     // Wallpaper mode
     const val WALLPAPER_MODE = "wallpaper_mode"
